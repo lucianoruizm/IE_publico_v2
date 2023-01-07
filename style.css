@@ -17,6 +17,9 @@ input {
 .hour {
     display: none;
 }
+.hour2 {
+    display: none;
+}
 
 .btn {
     background-color: aliceblue;
