@@ -8,52 +8,371 @@
     <title>Document</title>
 </head>
 <body>
-  <h1>Ingreso publico</h1>
-    <form id="data-form">
-        <input id="date" type="date">
-        <select name="empresa" id="empresa-select">
-            <option value="1">Bingo Mar de Ajo</option>
-            <option value="2">Bingo SB</option>
-            <option value="3">Bingo ST</option>
-        </select>
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        <p>Entre</p>
-                        <label for="hour">06:00 | 07:00</label>
-                        <input id="hour" class="hour hideHourInput" value="06:00" type="text">
-                    </th>
-                    <th>
-                        <p>Cantidad entrada:</p>
-                        <input id="entry" class="entry" type="number">
-                    </th>
-                    <th> 
-                        <p>Cantidad salida:</p>
-                        <input id="exit" class="exit" type="number">
-                    </th>
-                </tr>
-            </thead>
-            <thead>
-                <tr>
-                    <th>
-                        <label for="hour2">07:00 | 08:00</label>
-                        <input id="hour2" class="hour2 hideHourInput" value="07:00" type="text">
-                    </th>
-                    <th>
-                        <input id="entry2" class="entry2" type="number">
-                    </th>
-                    <th>
-                        <input id="exi2t" class="exit2" type="number">
-                    </th>
-                </tr>
-            </thead>
-        </table>
-        <button type="button" class="btn" onclick="capturar();">Enviar</button>
-    </form>
-
-    <div class="totalOutputContainer"></div>
-    
+    <header class="header">
+      <h1>Ingreso publico</h1>
+    </header>
+    <main class="main">
+        <div class="formContainer">
+            <form id="data-form">
+                <div class="fechaEmpresaContainer">
+                    <label for="date">Fecha: </label>
+                <input id="date" type="date">
+                <label for="empresa-select">Empresa: </label>
+                <select name="empresa" id="empresa-select">
+                    <option value="1">Bingo Mar de Ajo</option>
+                    <option value="2">Bingo SB</option>
+                    <option value="3">Bingo ST</option>
+                </select>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <p>Entre</p>
+                                <label for="hour">06:00 | 07:00</label>
+                                <input id="hour" class="hour hideHourInput" value="06:00" type="text">
+                            </th>
+                            <th>
+                                <p>Cantidad entrada:</p>
+                                <input id="entry" class="entry" type="number"  min="0">
+                            </th>
+                            <th> 
+                                <p>Cantidad salida:</p>
+                                <input id="exit" class="exit" type="number"  min="0">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="hour2">07:00 | 08:00</label>
+                                <input id="hour2" class="hour2 hideHourInput" value="07:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry2" class="entry2" type="number">
+                            </th>
+                            <th>
+                                <input id="exit2" class="exit2" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="eight">08:00 | 09:00</label>
+                                <input id="eight" class="hour hideHourInput" value="08:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="nine">09:00 | 10:00</label>
+                                <input id="nine" class="hour hideHourInput" value="09:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="ten">10:00 | 11:00</label>
+                                <input id="ten" class="hour hideHourInput" value="10:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="eleven">11:00 | 12:00</label>
+                                <input id="eleven" class="hour hideHourInput" value="11:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="twelve">12:00 | 13:00</label>
+                                <input id="twelve" class="hour hideHourInput" value="12:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="thirteen">13:00 | 14:00</label>
+                                <input id="thirteen" class="hour hideHourInput" value="13:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="fourteen">14:00 | 15:00</label>
+                                <input id="fourteen" class="hour hideHourInput" value="14:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="fifteen">15:00 | 16:00</label>
+                                <input id="fifteen" class="hour hideHourInput" value="15:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="sixteen">16:00 | 17:00</label>
+                                <input id="sixteen" class="hour hideHourInput" value="16:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="seventeen">17:00 | 18:00</label>
+                                <input id="seventeen" class="hour hideHourInput" value="17:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="eighteen">18:00 | 19:00</label>
+                                <input id="eighteen" class="hour hideHourInput" value="18:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="nineteen">19:00 | 20:00</label>
+                                <input id="nineteen" class="hour hideHourInput" value="19:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="twenty">20:00 | 21:00</label>
+                                <input id="twenty" class="hour hideHourInput" value="20:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="twentyone">21:00 | 22:00</label>
+                                <input id="twentyone" class="hour hideHourInput" value="21:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="twentytwo">22:00 | 23:00</label>
+                                <input id="twentytwo" class="hour hideHourInput" value="21:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="twentythree">23:00 | 00:00</label>
+                                <input id="twentythree" class="hour hideHourInput" value="23:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="z">00:00 | 01:00</label>
+                                <input id="z" class="hour hideHourInput" value="24:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="one">01:00 | 02:00</label>
+                                <input id="one" class="hour hideHourInput" value="25:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="two">02:00 | 03:00</label>
+                                <input id="two" class="hour hideHourInput" value="26:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="three">03:00 | 04:00</label>
+                                <input id="three" class="hour hideHourInput" value="27:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="four">04:00 | 05:00</label>
+                                <input id="four" class="hour hideHourInput" value="28:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="five">05:00 | 06:00</label>
+                                <input id="five" class="hour hideHourInput" value="29:00" type="text">
+                            </th>
+                            <th>
+                                <input id="entry" class="entry" type="number">
+                            </th>
+                            <th>
+                                <input id="exit" class="exit" type="number">
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+                <div class="btnContainer">
+                    <button type="button" class="btn" onclick="capturar();">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div class="totalOutputContainer"></div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
