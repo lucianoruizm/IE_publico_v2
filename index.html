@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Ingreso publico</h1>
+    <form id="data-form">
+        <input id="date" type="date">
+        <select name="empresa" id="empresa-select">
+            <option value="1">Bingo Mar de Ajo</option>
+            <option value="2">Bingo SB</option>
+            <option value="3">Bingo ST</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <p>Entre</p>
+                        <label for="hour">06:00 | 07:00</label>
+                        <input id="hour" class="hour" value="06:00" type="text">
+                    </th>
+                    <th>
+                        <p>Cantidad entrada:</p>
+                        <input id="entry" class="entry" type="number">
+                    </th>
+                    <th> 
+                        <p>Cantidad salida:</p>
+                        <input id="exit" class="exit" type="number">
+                    </th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th>
+                        <label for="hour2">07:00 | 08:00</label>
+                        <input id="hour2" class="hour" value="07:00" type="text">
+                    </th>
+                    <th>
+                        <input id="entry" class="entry" type="number">
+                    </th>
+                    <th>
+                        <input id="exit" class="exit" type="number">
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        <button type="button" class="btn" onclick="capturar();">Enviar</button>
+    </form>
+
+    <div class="totalOutputContainer"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
