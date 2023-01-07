@@ -39,7 +39,7 @@ const capturar = () => {
 
 let db = []
 
-const addNewObject = (data, data2) => {
-    db.push(data, data2)
+const addNewObject = (...data) => {
+    db.push(data)
     console.log(db); 
 }

@@ -14,10 +14,7 @@ input {
     border: navajowhite;
 }
 
-.hour {
-    display: none;
-}
-.hour2 {
+.hideHourInput {
     display: none;
 }
 
