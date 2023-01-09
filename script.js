@@ -1,17 +1,18 @@
 
-let formLength  = document.getElementById('data-form').length
-
 const capturar = () => {
     class Info{
         constructor(id, date, hour, ingreso, egreso){
             this.id = id;
-            this.date = date + ' ' + hour;
+            this.date = date + hour;
             this.ingreso = ingreso;
             this.egreso = egreso;
-            // this.totalEgresos = totalEgresos;
         }
         
     }
+    
+    let date = document.querySelector('#date').value
+
+    console.log(date + " 05:00:00"); 
 
     for(i = 1; i<=5; i++) {
         let data = "data" + i
@@ -19,7 +20,7 @@ const capturar = () => {
         let entryCount = "entryCount" + i
         let exitCount = "exitCount" + i
 
-        let date = document.querySelector('#date').value
+        
         let id = document.querySelector('#empresa-select').value
     
         hour = document.querySelector('.hour' + [i]).value
@@ -30,25 +31,6 @@ const capturar = () => {
 
         addNewObject(data)
     }
-
-    // let date = document.querySelector('#date').value
-    // let id = document.querySelector('#empresa-select').value
-
-    // let hour = document.querySelector('.hour').value
-    // let entryCount = document.querySelector('.entry').value
-    // let exitCount = document.querySelector('.exit').value
-
-    // let id2 = document.querySelector('#empresa-select').value
-    // let hour2 = document.querySelector('.hour2').value
-    // let entryCount2 = document.querySelector('.entry2').value
-    // let exitCount2 = document.querySelector('.exit2').value
-
-    
-    // const data = new Info(id, date, hour, entryCount, exitCount)
-    // const data2 = new Info(id2, date, hour2, entryCount2, exitCount2)
-    
-    // console.log(data, data2);
-
 
     let entries = arrayIteration(document.querySelectorAll('.entries'))
     let totalEntries = sumArray(entries)
@@ -62,10 +44,10 @@ const capturar = () => {
 
 let db = []
 
-const addNewObject = (...data) => {
-    db.push(data)
-}
-
+    const addNewObject = (...data) => {
+        db.push(data)
+    }
+    
 console.log(db);
 
 //FUNCTIONS
@@ -86,3 +68,20 @@ const sumArray = (array) => {
 
     return total
 }
+
+
+
+// function agregarTiempo(){
+//     var fecha = new Date(),
+//         ; //Tiempo en segundos
+ 
+//     fecha.setSeconds(addTime); //Añado el tiempo
+ 
+//     let dateSelect = document.querySelector('#date').value
+
+//     console.log("Fecha actual: " + dateSelect)
+//     console.log("Tiempo añadido: " + tiempo + " días")
+//     console.log("Fecha final: " + fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear() + ' ' + (fecha.getHours() + ":00:00"))
+// }
+
+// agregarTiempo()
