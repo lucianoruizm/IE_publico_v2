@@ -1,4 +1,6 @@
 
+let db = []
+
 const capturar = () => {
     class Info{
         constructor(id, date, hour, ingreso, egreso){
@@ -9,10 +11,13 @@ const capturar = () => {
         }
         
     }
+
+    let hora = "7"
     
     let date = document.querySelector('#date').value
-
-    console.log(date + " 05:00:00"); 
+    
+    let dateTime = (`${date} ${hora >= 10 ? hora + ':00:00' : '0' + hora + ':00:00'}`)
+    console.log(dateTime)
 
     for(i = 1; i<=5; i++) {
         let data = "data" + i
@@ -30,6 +35,7 @@ const capturar = () => {
         data = new Info(id, date, hour, entryCount, exitCount)
 
         addNewObject(data)
+        
     }
 
     let entries = arrayIteration(document.querySelectorAll('.entries'))
@@ -38,19 +44,14 @@ const capturar = () => {
     let exits = arrayIteration(document.querySelectorAll('.exits'))
     let totalExits = sumArray(exits)
 
+    console.log(db);
     console.log("Total entradas: ", totalEntries, "Total salidas: ", totalExits);
     
 }
-
-let db = []
-
-    const addNewObject = (...data) => {
-        db.push(data)
-    }
     
-console.log(db);
-
 //FUNCTIONS
+const addNewObject = (...data) => { db.push(...data) }
+
 const arrayIteration = (count) => {
     
     let array = []
@@ -68,6 +69,8 @@ const sumArray = (array) => {
 
     return total
 }
+
+
 
 
 
