@@ -3,36 +3,45 @@ let db = []
 
 const capturar = () => {
     class Info{
-        constructor(id, date, hour, ingreso, egreso){
+        constructor(id, dateTime, ingreso, egreso){
             this.id = id;
-            this.date = date + hour;
+            this.dateTime = dateTime;
             this.ingreso = ingreso;
             this.egreso = egreso;
         }
         
     }
 
-    let hora = "7"
+    let hora = 5
+    
     
     let date = document.querySelector('#date').value
     
-    let dateTime = (`${date} ${hora >= 10 ? hora + ':00:00' : '0' + hora + ':00:00'}`)
-    console.log(dateTime)
-
-    for(i = 1; i<=5; i++) {
+    for(i = 1; i<=24; i++) {
         let data = "data" + i
-        let hour = "hour" + i
         let entryCount = "entryCount" + i
         let exitCount = "exitCount" + i
 
+        let hour = hora + i
+        let newHour = 0
+        let dateTime
+
+        if (hour < 24) {
+           dateTime = (`${date} ${Number(hour) >= 10 ? Number(hour) + ':00:00' : '0' + Number(hour) + ':00:00'}`)
+        } else {
+           let newDate = new Date(date)
+           for(j = 0; j<=6; j++) {
+            let horaCero = newHour + j 
+            dateTime = (`${Number(newDate.getDate()) + 2} ${'0' + Number(horaCero) + ':00:00'}`)
+           }
+        }
+        
         
         let id = document.querySelector('#empresa-select').value
-    
-        hour = document.querySelector('.hour' + [i]).value
         entryCount = document.querySelector('.entry' + [i]).value
         exitCount = document.querySelector('.exit' + [i]).value
 
-        data = new Info(id, date, hour, entryCount, exitCount)
+        data = new Info(id, dateTime, entryCount, exitCount)
 
         addNewObject(data)
         
