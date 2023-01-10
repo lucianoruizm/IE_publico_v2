@@ -37,23 +37,25 @@ const capturar = () => {
     let exits = arrayIteration(document.querySelectorAll('.exits'))
     let totalExits = sumArray(exits)
 
+    let entrada = arrayIteration(document.querySelectorAll('#entry'))
+
     console.log(db);
-    console.log("Total entradas: ", totalEntries, "Total salidas: ", totalExits);
+    console.log(entrada);
     
 }
     
 //FUNCTIONS
 const addNewObject = (...data) => { db.push(...data) }
 
-const arrayIteration = (count) => {
+// const arrayIteration = (count) => {
     
-    let array = []
-    for(i=0; i<count.length; i++){
-        array.push(count[i].value)
-    }
-    return array
+//     let array = []
+//     for(i=0; i<count.length; i++){
+//         array.push(count[i].value)
+//     }
+//     return array
 
-}
+// }
 
 const sumArray = (array) => {
 
@@ -61,5 +63,22 @@ const sumArray = (array) => {
         (accumulator, currentValue) => Number(accumulator) + Number(currentValue), 0)
 
     return total
+}
+
+
+
+ 
+
+
+const arrayIteration = (count) => {
+
+    let array = []
+    for(i=0; i<count.length; i++){
+        array.push(count[i].value)
+    }
+    console.log(array);
+
+    
+
 }
 
