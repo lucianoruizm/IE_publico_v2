@@ -3,18 +3,16 @@ let db = []
 
 const capturar = () => {
     class Info{
-        constructor(id, dateTime, ingreso, egreso){
+        constructor(id, date, hour, ingreso, egreso){
             this.id = id;
-            this.dateTime = dateTime;
+            this.date = date;
+            this.hour = hour;
             this.ingreso = ingreso;
             this.egreso = egreso;
         }
         
     }
 
-    let hora = 5
-    
-    
     let date = document.querySelector('#date').value
     
     for(i = 1; i<=24; i++) {
@@ -22,26 +20,12 @@ const capturar = () => {
         let entryCount = "entryCount" + i
         let exitCount = "exitCount" + i
 
-        let hour = hora + i
-        let newHour = 0
-        let dateTime
-
-        if (hour < 24) {
-           dateTime = (`${date} ${Number(hour) >= 10 ? Number(hour) + ':00:00' : '0' + Number(hour) + ':00:00'}`)
-        } else {
-           let newDate = new Date(date)
-           for(j = 0; j<=6; j++) {
-            let horaCero = newHour + j 
-            dateTime = (`${Number(newDate.getDate()) + 2} ${'0' + Number(horaCero) + ':00:00'}`)
-           }
-        }
-        
-        
         let id = document.querySelector('#empresa-select').value
+        hour = document.querySelector('.hour' + [i]).value
         entryCount = document.querySelector('.entry' + [i]).value
         exitCount = document.querySelector('.exit' + [i]).value
 
-        data = new Info(id, dateTime, entryCount, exitCount)
+        data = new Info(id, date, hour, entryCount, exitCount)
 
         addNewObject(data)
         
@@ -79,21 +63,3 @@ const sumArray = (array) => {
     return total
 }
 
-
-
-
-
-// function agregarTiempo(){
-//     var fecha = new Date(),
-//         ; //Tiempo en segundos
- 
-//     fecha.setSeconds(addTime); //Añado el tiempo
- 
-//     let dateSelect = document.querySelector('#date').value
-
-//     console.log("Fecha actual: " + dateSelect)
-//     console.log("Tiempo añadido: " + tiempo + " días")
-//     console.log("Fecha final: " + fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear() + ' ' + (fecha.getHours() + ":00:00"))
-// }
-
-// agregarTiempo()
