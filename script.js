@@ -65,11 +65,6 @@ const sumArray = (array) => {
     return total
 }
 
-
-
- 
-
-
 const arrayIteration = (count) => {
 
     let array = []
@@ -78,7 +73,22 @@ const arrayIteration = (count) => {
     }
     console.log(array);
 
-    
-
 }
 
+input = document.querySelectorAll("#entry")
+for (let i = 0; i < input.length; i++) {
+  input[i].addEventListener('change', function() {
+  n = document.getElementById("totalOutputContainer");
+  n.value = parseInt("0"+n.value) + parseInt("0"+this.value) - parseInt("0"+this.defaultValue);
+ this.defaultValue = this.value;
+ });
+};
+
+inputSalida = document.querySelectorAll("#exit")
+for (let i = 0; i < inputSalida.length; i++) {
+  inputSalida[i].addEventListener('change', function() {
+  n2 = document.getElementById("totalOutputContainerSalida");
+  n2.value = parseInt("0"+n2.value) + parseInt("0"+this.value) - parseInt("0"+this.defaultValue);
+ this.defaultValue = this.value;
+ });
+};
